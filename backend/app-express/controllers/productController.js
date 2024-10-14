@@ -23,7 +23,13 @@ exports.getProduct = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
-    const product = await Product.create(req.body);
+    const { name, description, price, /* otros campos */ } = req.body;
+    const product = await Product.create({
+      name,
+      description,
+      price: parseFloat(price), // Asegúrate de que price sea un número
+      // ... otros campos ...
+    });
     res.status(201).json(product);
   } catch (error) {
     res.status(400).json({ error: error.message });
