@@ -11,6 +11,7 @@ import Checkout from './views/Checkout';
 import OrderConfirmation from './views/OrderConfirmation';
 import Login from './views/Login';
 import Register from './views/Register';
+import AddProduct from './components/AddProduct';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/order-confirmation" element={<OrderConfirmation />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/add-product" element={<AddProduct />} />
             </Routes>
           </MainLayout>
         </Router>
